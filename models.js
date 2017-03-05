@@ -14,7 +14,7 @@ var AnswerSchema = new Schema({
   text: String,
   createdAt: {type: Date, default: Date.now},
   updatedAt: {type: Date, default: Date.now},
-  votes: {type: Number, defalt: 0}
+  votes: {type: Number, default: 0}
 });
 
 AnswerSchema.method("update", function(updates, callback){
@@ -23,6 +23,7 @@ AnswerSchema.method("update", function(updates, callback){
 });
 
 AnswerSchema.method("vote", function(vote, callback){
+  console.log(vote);
   if(vote === "up"){
     this.votes += 1;
   } else {

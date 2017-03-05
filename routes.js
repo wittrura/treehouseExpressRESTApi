@@ -95,7 +95,6 @@ router.post("/:qid/answers/:aid/vote-:dir", function(req, res, next){
     next(err);
   } else {
     req.vote = req.params.dir;
-
     next();
   }
 }, function(req, res, next){
